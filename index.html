@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <title>douban_practice</title>
+  <link rel="icon" type="img/x-ico" href="./static/images/favicon.ico">
+  <!-- 方法一： -->
+  <!-- <meta name="flexible" />
+  <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+  <script>
+    if (!dpr && !scale) {
+      var isAndroid = win.navigator.appVersion.match(/android/gi);
+      var isIPhone = win.navigator.appVersion.match(/iphone/gi);
+      var devicePixelRatio = win.devicePixelRatio;
+      if (isIPhone) { // iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案 
+        if (devicePixelRatio >= 3 &&
+          (!dpr || dpr >= 3)) {
+          dpr = 3;
+        } else if (devicePixelRatio >= 2 && (!dpr || dpr >= 2)) {
+          dpr = 2;
+        } else {
+          dpr = 1;
+        }
+      } else { // 其他设备下，仍旧使用1倍的方案 
+        dpr = 1;
+      }
+      scale = 1 / dpr;
+    }
+  </script> -->
+
+  <!-- 方法二 -->
+  <!-- <script>
+    // 原理:::::: /* 比例公式： 设计图的宽度/自己设定的fontsize值 = 不同的屏幕/这个屏幕对应的fontsize */ //注意点　这个ＪＳ千万不要自作聪明添加一个入口函数 //这个js尽量放到最前面去，在页面的元素加载前，就把这个屏幕对应的fontSize计算完成
+    var oHtml = document.documentElement; // 获取屏幕的宽度 var screenWidth = oHtml.offsetWidth; 
+    // 设计图的宽度，根据自己的设计图去填写 
+    var uiWidth = 480;
+    // 自己设定的html的font值 
+    var fonts = 10; // 不要用40不然小字体显示不出来 
+    var bili = uiWidth / fonts;
+    // 最开始的时候调用一次 
+    getSize();
+    // resize的时候动态监听
+    window.addEventListener('resize', getSize);
+
+    function getSize() {
+      screenWidth = oHtml.offsetWidth;
+      console.log(screenWidth);
+      // 如果说屏幕小于320 就限制在320对应的fontsize // 如果说大于设计图的宽度，就限制在设计图的宽度 // 都不满足，就代表在正常的区间里面，就可以自由的动态计算 
+      if (screenWidth <= 320) {
+        oHtml.style.fontSize = 3
+        20 / bili + 'px';
+      } else if (screenWidth >= uiWidth) {
+        oHtml.style.fontSize = uiWidth / bili + 'px';
+      } else { // 动态设置当前屏幕对应的html的font值 
+        oHtml.style.fontSize = screenWidth / bili + 'px';
+      }
+    }
+  </script>-->
+  <!-- 方法三 -->
+  <!-- <script>
+    fnResize()
+    window.onresize = function () {
+      fnResize()
+    }
+    function fnResize() {
+      var deviceWidth = document.documentElement.clientWidth || window.innerWidth
+      if (deviceWidth >= 640) {
+        deviceWidth = 640
+      }
+      if (deviceWidth <= 320) {
+        deviceWidth = 320
+      }
+      //当屏幕宽度为640时候，html的fontsize为10
+      document.documentElement.style.fontSize = (deviceWidth / 64) + 'px'
+    }
+  </script> -->
+
+  <style>
+    body {
+      margin: 0;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+
+</html>

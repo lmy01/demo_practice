@@ -1,0 +1,30 @@
+.themeColor {
+  color: #42bd56 !important;
+}
+.themeBgc {
+  background-color: #42bd56 !important;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.centerX {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.centerY {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translateY(-50%);
+}
